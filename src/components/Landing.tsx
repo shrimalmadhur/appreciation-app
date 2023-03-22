@@ -71,7 +71,7 @@ const Landing: FC = () => {
           aria-label="Tabs with underline"
           style="pills"
         >
-          <Tabs.Item title="NFT" active={true}>
+          <Tabs.Item title="Appreciation" active={true}>
             <div className='w-full'><ListAllNFT wallet={wallet}></ListAllNFT></div>
           </Tabs.Item>
         </Tabs.Group>  
