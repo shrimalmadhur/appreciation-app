@@ -64,7 +64,14 @@ const Landing: FC = () => {
           {connecting ? 'Connecting' : wallet ? 'Disconnect' : 'Connect Wallet'}
         </button>
       </div>
-
+      <br></br>
+      <div className='w-screen px-4 flex flex-col font-mono'>
+        This is a platform where you can mint an NFT for appreciation to someone. Think onchain LinkedIn kudos.
+        <ul>
+          <li> - Feel Free to mint in to other people you want by connecting your wallet</li>
+          <li> - These tokens are <a className="text-blue-600 visited:text-purple-600" href="https://vitalik.ca/general/2022/01/26/soulbound.html" target="_blank">soulbound</a>. Once minted they cannot be transferred or sold. They can only be burned by the owner</li>
+        </ul>
+      </div>
       <div className="w-full flex flex-col mx-auto">
         <div className="mt-4 text-2xl text-center">Appreciation List</div>
         <Tabs.Group
