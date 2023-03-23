@@ -56,9 +56,9 @@ const NftCard: FC<Props> = (data) => {
     }
 
     var address = mintAddress || null;
-    // if (mintAddress.endsWith('.eth')) {
-    //   address = await provider.resolveName(mintAddress);
-    // }
+    if (mintAddress.endsWith('.eth')) {
+      address = await provider.resolveName(mintAddress);
+    }
 
     try {
       let nftContract = new ethers.Contract(contractAddress, erc1155abi, signer);
@@ -130,7 +130,7 @@ const NftCard: FC<Props> = (data) => {
       
                     <input type="text" name="address" required
                         className="border-2 border-black px-4 py-3 leading-9" size={64} onChange={(e) => setMintAddress(e.target.value)}
-                        placeholder="Address in 0x... format"/>
+                        placeholder="Address in 0x... or ENS format"/>
 
                     <span className="text-red-500 ml-auto leading-10">* Required</span>
                   
