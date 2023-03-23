@@ -41,7 +41,7 @@ const ListAllNFT: FC<Props> = (data) => {
       }
       {
         nftData
-          ? <div className='grid grid-cols-4 gap-4'>{nftData.map(element => {
+          ? <div className='md:grid md:grid-cols-4 gap-4'>{nftData.map(element => {
             return (
               <div className='w-full space-between md:h-auto flex flex-col md:flex-row rounded-full'>
                 <NftCard token={element} wallet={data.wallet} setTxHashDispatch={setTxHash}></NftCard>
