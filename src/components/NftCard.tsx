@@ -63,9 +63,9 @@ const NftCard: FC<Props> = (data) => {
     try {
       let nftContract = new ethers.Contract(contractAddress, erc1155abi, signer);
       const tx = await nftContract["mint(address,uint256)"](address, data.token.tokenId, { gasLimit: 100000, value: ethers.parseEther('0.005') })
+      setShowModal(false);
       const txURL = etherScanURL + "tx/" + tx.hash;
       data.setTxHashDispatch(txURL);
-      setShowModal(false);
       const receipt = await tx.wait();
       data.setTxHashDispatch("")
     } catch (error) {
@@ -107,7 +107,7 @@ const NftCard: FC<Props> = (data) => {
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl w-full">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
